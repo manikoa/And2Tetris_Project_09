@@ -1,0 +1,39 @@
+
+
+class Input {
+
+    function void check() {
+        var int firstNum;
+        var char operation;
+        var int secondNum;
+        var int result;
+
+        let firstNum = Keyboard.readInt("Type first number of operation:");
+        let operation = Keyboard.readChar("Type operation:");
+        //TODO re ask this question if it is not a valid operation
+        let secondNum = Keyboard.readInt("Type second number of operation:");
+
+        let result = compute(firstNum, secondNum, result);
+        
+        Screen.answer();
+    }
+
+    function compute(firstNum, secondNum, operation){
+        if (operation = 42) { // 42 is *
+            let result = Calculator.add(firstNum, SecondNum);
+            return;
+        }
+        if (operation = 43) { // 43 is +
+            Calculator.add(firstNum, SecondNum);
+            return;
+        }
+        if (operation = 45) { // 45 is -
+            Calculator.subtract(firstNum, SecondNum);
+            return;
+        }
+        if (operation = 47) { // 47 is /
+            Calculator.divide(firstNum, SecondNum);
+            return;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+
+
+class Main {
+    // static boolean exitSentinel;
+    // let exitSentinel = false;
+    function void main() {
+        var Screen screen;
+        let screen = Screen.new();
+
+        while (not Input.shouldExit()) {
+            Input.check();
+            Screen.update();
+        }
+        return;
+    }
+
+    // function void exit () {
+    //     let exitSentinel = true;
+    //     return;
+    // }
+}
