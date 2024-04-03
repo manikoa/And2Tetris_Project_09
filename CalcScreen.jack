@@ -1,8 +1,8 @@
 /**
  * The Screen class represents a screen that displays a result.
  */
-class Screen {
-    var int result;
+class CalcScreen {
+    // var int result;
 
     /**
      * Sets the answer to be displayed on the screen.
@@ -10,15 +10,17 @@ class Screen {
      * Result The result to be displayed.
      */
     function void setAnswer(int result) {
-        let this.result = result;
+        let result = result;
+        return;
     }
 
     /**
      * Displays the result on the screen.
      */
-    function void display() {
-        Output.printString("Result: ");
-        Output.printInt(result);
-        Output.printString("\n");
+    function void displayResult(int result) {
+        do Output.printString("Result: ");
+        do Output.printInt(result);
+        do Output.println();
+        return;
     }
 }

@@ -8,31 +8,59 @@ class Input {
         var int result;
 
         let firstNum = Keyboard.readInt("Type first number of operation:");
-        let operation = Keyboard.readChar("Type operation:");
+        do Output.println();
+        do Output.printString("Type operation (+, -, *, /):");
+        do Output.println();
+        let operation = Keyboard.readChar();
+        do Output.println();
         let secondNum = Keyboard.readInt("Type second number of operation:");
+        do Output.println();
 
-        let result = compute(firstNum, secondNum, operation);
+        let result = Input.compute(firstNum, secondNum, operation);
         
-        Screen.setAnswer(result);
-        Screen.display();
+        // do Screen.setAnswer(result);
+        do CalcScreen.displayResult(result);
+        return;
     }
 
     function int compute(int firstNum, int secondNum, char operation) {
-        if (operation == '*') {
+        if (operation = 42) { //*
             return Calculator.multiply(firstNum, secondNum);
         }
-        else if (operation == '+') {
+        if (operation = 43) { //+
             return Calculator.add(firstNum, secondNum);
         }
-        else if (operation == '-') {
+        if (operation = 45) {//-
             return Calculator.subtract(firstNum, secondNum);
         }
-        else if (operation == '/') {
+        if (operation = 47) {///
             return Calculator.divide(firstNum, secondNum);
         }
-        else {
-            Output.printString("Invalid operation.\n");
+        if (~(operation = 42 | operation = 43 | operation = 45 | operation = 47)) {
+            do Output.printString("Invalid operation.\n");
+            do Output.println();
             return 0; // Or any other default value indicating error
         }
+        return 0;
+    }
+
+    function boolean shouldExit() {
+        var char input;
+        do Output.printString("Do you want to exit? (y/n)\n");
+        do Output.println();
+        let input = Keyboard.readChar();
+        do Output.println();
+        if (input = 89) { //y
+            return true;
+        }
+        if (input = 78) { //n
+            return false;
+        }
+        if (~(input = 78 | input = 89)) {
+            do Output.printString("Invalid input.\n");
+            do Output.println();
+            return false;
+        }
+        return false;
     }
 }

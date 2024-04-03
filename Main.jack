@@ -1,19 +1,24 @@
 
 
-cclass Main {
+class Main {
     function void main() {
-        var Screen screen;
-        var Input input;
-        var ResultManager resultManager;
+        // var Screen screen.new();
+        // var Input input;
+        // var ResultManager resultManager;
 
-        let screen = Screen.new();
-        let input = Input.new();
-        let resultManager = ResultManager.new();
+        // let screen = Screen.new();
+        // let input = Input.new();
+        // let resultManager = ResultManager.new();
 
-        while (not input.shouldExit()) {
-            input.check(resultManager);
-            var int result = resultManager.getResult();
-            screen.displayResult(result);
+        var int result;
+        
+        while (~Input.shouldExit()) {
+            do Screen.clearScreen();
+            do Output.moveCursor(0, 0);
+            // do Input.check(resultManager);
+            let result = Input.check();
+            // do CalcScreen.displayResult(result);
         }
+        return;
     }
 }
