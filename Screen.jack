@@ -7,7 +7,7 @@ class Screen {
     /**
      * Sets the answer to be displayed on the screen.
      * 
-     * @param result The result to be displayed.
+     * Result The result to be displayed.
      */
     function void setAnswer(int result) {
         let this.result = result;
