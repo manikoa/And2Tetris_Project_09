@@ -1,21 +1,19 @@
 
 
-class Main {
-    // static boolean exitSentinel;
-    // let exitSentinel = false;
+cclass Main {
     function void main() {
         var Screen screen;
+        var Input input;
+        var ResultManager resultManager;
+
         let screen = Screen.new();
+        let input = Input.new();
+        let resultManager = ResultManager.new();
 
-        while (not Input.shouldExit()) {
-            Input.check();
-            Screen.update();
+        while (not input.shouldExit()) {
+            input.check(resultManager);
+            var int result = resultManager.getResult();
+            screen.displayResult(result);
         }
-        return;
     }
-
-    // function void exit () {
-    //     let exitSentinel = true;
-    //     return;
-    // }
 }
