@@ -1,10 +1,21 @@
+/**
+ * The Screen class represents a screen that displays a result.
+ */
 class Screen {
     var int result;
 
+    /**
+     * Sets the answer to be displayed on the screen.
+     * 
+     * @param result The result to be displayed.
+     */
     function void setAnswer(int result) {
         let this.result = result;
     }
 
+    /**
+     * Displays the result on the screen.
+     */
     function void display() {
         Output.printString("Result: ");
         Output.printInt(result);
