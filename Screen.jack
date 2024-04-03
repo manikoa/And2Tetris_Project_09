@@ -1,0 +1,13 @@
+class Screen {
+    var int result;
+
+    function void setAnswer(int result) {
+        let this.result = result;
+    }
+
+    function void display() {
+        Output.printString("Result: ");
+        Output.printInt(result);
+        Output.printString("\n");
+    }
+}
